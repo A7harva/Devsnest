@@ -1,0 +1,45 @@
+.outer{
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    border: 2px solid black;
+    background-color: rgb(255, 0, 0);
+    border-radius: 210px;
+    margin-top: 50px;
+}
+.mid{
+    width: 320px;
+    height: 320px;
+    border:2px solid black;
+    margin: 40px 40px;
+    background-color: white;
+    border-radius: 190px;
+}
+.inner{
+    height:15px;
+    width: 15px;
+    margin: 152px 152px;
+    border-radius: 20px;
+    background-color: black;
+}
+.h{
+    height: 110px;
+    width: 4px;
+    background-color: black;
+    margin: 0px 44px;
+    transform: rotate(-45deg);
+}
+.m{
+    height:130px;
+    width: 4px;
+    background-color: black;
+    margin: -215px 50px;
+    transform: rotate(45deg);
+}
+.s{
+    height:150px;
+    width: 4px;
+    background-color: black;
+    margin: 200px 5px;
+    transform: rotate(0deg);
+}
