@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+
+
+
+
+            function is_array(input){
+                return Array.isArray(input);
+            }
+
+            function array_Clone(input){
+                return input.concat();
+            }
+
+            function first(arr,n){
+                if (n){
+                    if (n < 1){
+                        return [];
+                    }
+                    if (n >= arr.length){
+                        return arr;
+                    }
+                    else{
+                        return arr.slice(0,n);
+                    }
+                }
+                else{
+                    return arr[0];
+                }
+            }
+
+            function Join(arr){
+                return arr.join("+")
+            }
+
+            function freq(arr){
+                arr.sort()
+                var temp = 1, Max = 1, element = arr[0];
+                for (i=1;i<arr.length;i++){
+                    if (arr[i-1] == arr[i]){
+                        temp += 1;
+                    }
+                    else{
+                        temp = 1;
+                    }
+                    if (temp > Max){
+                        Max = temp;
+                        element = arr[i];
+                    }
+                }
+                return String(element) + " (" + String(Max) + " times)";
+            }
+
+
+
+
+
+
+            console.log(is_array('w3resource'));
+            console.log(is_array([1, 2, 4, 0]));
+            console.log(array_Clone([1, 2, 4, 0]));
+            console.log(array_Clone([1, 2, [4, 0]]));
+            console.log(first([7, 9, 0, -2]));
+            console.log(first([],3));
+            console.log(first([7, 9, 0, -2],3));
+            console.log(first([7, 9, 0, -2],6));
+            console.log(first([7, 9, 0, -2],-3));
+            console.log(Join(["red","green","white","black"]))
+            console.log(freq([3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]));
+
+
+
+
+        </script>
+    </head>
+
+    <body style="background-color: black;">   <!-- Better on the eyes -->
+    </body>
+</html>
