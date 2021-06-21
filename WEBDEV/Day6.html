@@ -6,15 +6,20 @@
 
             //Functions
             
-
+            // 1
+            
             function is_array(input){
                 return Array.isArray(input);
             }
-
+            
+            // 2
+            
             function array_Clone(input){
                 return input.concat();
             }
 
+            // 3
+            
             function first(arr,n){
                 if (n){
                     if (n < 1){
@@ -32,10 +37,14 @@
                 }
             }
 
+            // 4
+            
             function Join(arr){
                 return arr.join("+")
             }
 
+            // 5
+            
             function freq(arr){
                 arr.sort()
                 var temp = 1, Max = 1, element = arr[0];
@@ -60,16 +69,30 @@
 
 
 
+            // 1
+            
             console.log(is_array('w3resource'));
             console.log(is_array([1, 2, 4, 0]));
+            
+            // 2
+            
             console.log(array_Clone([1, 2, 4, 0]));
             console.log(array_Clone([1, 2, [4, 0]]));
+            
+            // 3
+            
             console.log(first([7, 9, 0, -2]));
             console.log(first([],3));
             console.log(first([7, 9, 0, -2],3));
             console.log(first([7, 9, 0, -2],6));
             console.log(first([7, 9, 0, -2],-3));
+            
+            // 4
+            
             console.log(Join(["red","green","white","black"]))
+            
+            // 5
+            
             console.log(freq([3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]));
 
 
