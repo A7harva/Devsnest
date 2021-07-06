@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Memory Test</title>
+        <style>
+            body{
+                background-color: black;
+                color: white;
+            }
+            .header{
+                font-family: 'Courier New', Courier, monospace;
+                text-align: center;
+            }
+            #heading{
+                font-size: 50px;
+            }
+            #instructions{
+                font-size: 18px;
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+            table{
+                background-color: white;
+                border-radius: 10px;
+                position:absolute;
+                left: 15%;
+                width: 70%;
+            }
+            td{
+                margin: 10px;
+                border-radius: 10px;
+                background-color: black;
+                height: 170px;
+                width: 24%;
+            }
+            td:hover{
+                opacity: 0.85;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1 id="heading">Memory Card Game</h1>
+            <p id="instructions">Test your memory with this memory game. On the game board, there are always two identical images. Start the game by flipping a card. Then try to find another card that has the same image as the first. If you can't find a pair, the flipped cards will be flipped back with the face down. Try to remember these images as it becomes easier to find pairs the longer you play. When you find a pair they are removed from the board and when you find all the pairs in this memory, you have completed the level.</p>
+        </div>
+        <table>
+            <tr>
+                <td><img id="0" src="Diamond.png" height="168px" width="100%" onclick="flip(0)"></td>
+                <td><img id="1" src="Diamond.png" height="168px" width="100%" onclick="flip(1)"></td>
+                <td><img id="2" src="Diamond.png" height="168px" width="100%" onclick="flip(2)"></td>
+                <td><img id="3" src="Diamond.png" height="168px" width="100%" onclick="flip(3)"></td>
+            </tr>
+            <tr>
+                <td><img id="4" src="Diamond.png" height="168px" width="100%" onclick="flip(4)"></td>
+                <td><img id="5" src="Diamond.png" height="168px" width="100%" onclick="flip(5)"></td>
+                <td><img id="6" src="Diamond.png" height="168px" width="100%" onclick="flip(6)"></td>
+                <td><img id="7" src="Diamond.png" height="168px" width="100%" onclick="flip(7)"></td>
+            </tr>
+            <tr>
+                <td><img id="8" src="Diamond.png" height="168px" width="100%" onclick="flip(8)"></td>
+                <td><img id="9" src="Diamond.png" height="168px" width="100%" onclick="flip(9)"></td>
+                <td><img id="10" src="Diamond.png" height="168px" width="100%" onclick="flip(10)"></td>
+                <td><img id="11" src="Diamond.png" height="168px" width="100%" onclick="flip(11)"></td>
+            </tr>
+        </table>
+        <script>
+            var arr = [0,0,0,0,0,0,0,0,0,0,0,0], random, current = 12, temp, c = 0, index1, index2, a = 0;
+            var imag = ["cap A.png", "cap A.png", "hulk.png", "hulk.png", "ironman.png", "ironman.png", "spidey.png", "spidey.png", "Thanos.png", "Thanos.png", "thor.png", "thor.png"];
+            while (0 !== current){
+                random = Math.floor(Math.random()*current);
+                current -= 1;
+                temp = imag[current];
+                imag[current] = imag[random];
+                imag[random] = temp;
+            }
+            function flip(k){
+                if (c%3 == 0 && arr[k] == 0){
+                    document.getElementsByTagName("img")[k].src = imag[k];
+                    arr[k] = 1;
+                    c += 1;
+                    index1 = k;
+                }
+                else if (c%3 == 1 && arr[k] == 0){
+                    arr[k] = 1;
+                    c += 1;
+                    index2 = k;
+                    if (imag[k] == imag[index1]){
+                        document.getElementsByTagName("img")[k].src = imag[k];
+                        bool = true;
+                        a += 2;
+                    }
+                    else{
+                        document.getElementsByTagName("img")[k].src = imag[k];
+                        bool = false;
+                    }
+                }
+                else if (c%3 == 2){
+                    if (bool){
+                        document.getElementsByTagName("img")[index1].src = "Blacc.jpg";
+                        document.getElementsByTagName("img")[index2].src = "Blacc.jpg";
+                        document.getElementsByTagName("img")[index1].height = "95%";
+                        document.getElementsByTagName("img")[index2].height = "95%";
+                        document.getElementsByTagName("img")[index1].width = "95%";
+                        document.getElementsByTagName("img")[index2].width = "95%";
+                    }
+                    else if (!(bool)){
+                        document.getElementsByTagName("img")[index1].src = "Diamond.png";
+                        document.getElementsByTagName("img")[index2].src = "Diamond.png";
+                        arr[index1] = 0;
+                        arr[index2] = 0;
+                    }
+                    c += 1;
+                }
+                if (a == 12){
+                    if (confirm("Congratulations!!! you cleared the game in " + (c+1)/3 + " moves\nWould you like to Play again?")){
+                        location.reload();
+                    }
+                    else{
+                        window.close();
+                    }
+                }
+            }
+            
+        </script>
+    </body>
+</html>
