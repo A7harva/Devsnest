@@ -1,0 +1,49 @@
+#instructions{
+    display: block;
+}
+#quiz{
+    display: none;
+}
+#result{
+    display: none;
+}
+body{
+    background-color: rgb(203, 229, 252);
+    color: rgb(0, 66, 153);
+    font-family: monospace;
+    text-align: center;
+}
+h1{
+    font-size: 50px;
+}
+p{
+    font-size: 18px;
+}
+button{
+    height: 70px;
+    width: 150px;
+    border-radius: 20px;
+    font-size: 45px;
+    background-color: rgb(170, 214, 252);
+    color: rgb(0, 66, 153);
+    border-color: rgb(0, 66, 153);
+}
+button:hover{
+    opacity: 0.6;
+}
+#ques{
+    
+    font-size: 45px;
+    margin-top: 5%;
+}
+#choice1,#choice2,#choice3,#choice4{
+    height: 120px;
+    width: 230px;
+}
+#next{
+    position: absolute;
+    bottom: 10%;
+}
+#result > p{
+    font-size: 25px;
+}
