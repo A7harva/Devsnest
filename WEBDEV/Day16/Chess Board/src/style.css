@@ -1,0 +1,29 @@
+.App{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border: 15px solid black;
+  height: 320px;
+  width: 320px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  transform: translate(-50%, -50%);
+}
+.RowOdd{
+  display: grid;
+  width: 320px;
+  height: 40px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.RowEven{
+  width: 320px;
+  height: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.Black{
+  background-color: black;
+}
+.White{
+  background-color: white;
+}
