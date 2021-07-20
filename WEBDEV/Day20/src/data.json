@@ -1,0 +1,27 @@
+[
+    {
+        "index": 0,
+        "foodName": "Pizza",
+        "calories": 56
+    },
+    {
+        "index": 1,
+        "foodName": "Burger",
+        "calories": 69
+    },
+    {
+        "index": 2,
+        "foodName": "Coke",
+        "calories": 500
+    },
+    {
+        "index": 3,
+        "foodName": "Brownie",
+        "calories": 180
+    },
+    {
+        "index": 4,
+        "foodName": "Pani Puri",
+        "calories": 10
+    }
+]
